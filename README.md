@@ -1,8 +1,6 @@
-*******************************************************
-*                                                     *
-*                Passa Parola Oyunu                   *
-*                                                     *
-*******************************************************
+
+# Passa Parola Oyunu
+
 
 Bu proje, C# programlama dili ve Windows Forms kullanılarak geliştirilmiş bir "Passa Parola" oyunu örneğidir.
 
