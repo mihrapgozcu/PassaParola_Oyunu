@@ -1,6 +1,6 @@
 *******************************************************
 *                                                     *
-*                Passa Parola Oyunu                  *
+*                Passa Parola Oyunu                   *
 *                                                     *
 *******************************************************
 
@@ -39,5 +39,9 @@ Bu proje, C# programlama dili ve Windows Forms kullanılarak geliştirilmiş bir
 
 ## Uygulamanın Ekran Görüntüsü:
 
-![Passa Parola Oyunu Ekran Görüntüsü]()
+![Passa Parola Oyunu Ekran Görüntüsü](https://github.com/mihrapgozcu/PassaParola_Oyunu/blob/master/ana%20ekran.png)
+
+![](https://github.com/mihrapgozcu/PassaParola_Oyunu/blob/master/g%C3%B6r%C3%BCnt%C3%BC.png)
+
+![](https://github.com/mihrapgozcu/PassaParola_Oyunu/blob/master/uygulama%20sonu.png)
 
