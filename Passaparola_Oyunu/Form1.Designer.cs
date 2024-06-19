@@ -52,16 +52,16 @@
             btnR = new Button();
             btnI = new Button();
             btnP = new Button();
-            button24 = new Button();
+            btnToplam = new Button();
             richTextBox1 = new RichTextBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             linkLabel1 = new LinkLabel();
             textBox1 = new TextBox();
             groupBox3 = new GroupBox();
-            label4 = new Label();
+            lblYanlis = new Label();
             label3 = new Label();
-            label2 = new Label();
+            lblDogru = new Label();
             label1 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -284,14 +284,14 @@
             btnP.Text = "P";
             btnP.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // btnToplam
             // 
-            button24.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            button24.Location = new Point(78, 91);
-            button24.Name = "button24";
-            button24.Size = new Size(277, 326);
-            button24.TabIndex = 24;
-            button24.UseVisualStyleBackColor = true;
+            btnToplam.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            btnToplam.Location = new Point(78, 91);
+            btnToplam.Name = "btnToplam";
+            btnToplam.Size = new Size(277, 326);
+            btnToplam.TabIndex = 24;
+            btnToplam.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
@@ -322,7 +322,6 @@
             groupBox2.Size = new Size(311, 157);
             groupBox2.TabIndex = 27;
             groupBox2.TabStop = false;
-            groupBox2.Enter += groupBox2_Enter;
             // 
             // linkLabel1
             // 
@@ -346,9 +345,9 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(label4);
+            groupBox3.Controls.Add(lblYanlis);
             groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(label2);
+            groupBox3.Controls.Add(lblDogru);
             groupBox3.Controls.Add(label1);
             groupBox3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             groupBox3.Location = new Point(447, 409);
@@ -357,14 +356,14 @@
             groupBox3.TabIndex = 28;
             groupBox3.TabStop = false;
             // 
-            // label4
+            // lblYanlis
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(226, 26);
-            label4.Name = "label4";
-            label4.Size = new Size(26, 31);
-            label4.TabIndex = 3;
-            label4.Text = "0";
+            lblYanlis.AutoSize = true;
+            lblYanlis.Location = new Point(226, 26);
+            lblYanlis.Name = "lblYanlis";
+            lblYanlis.Size = new Size(26, 31);
+            lblYanlis.TabIndex = 3;
+            lblYanlis.Text = "0";
             // 
             // label3
             // 
@@ -375,14 +374,14 @@
             label3.TabIndex = 2;
             label3.Text = "Yanlış:";
             // 
-            // label2
+            // lblDogru
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(86, 26);
-            label2.Name = "label2";
-            label2.Size = new Size(26, 31);
-            label2.TabIndex = 1;
-            label2.Text = "0";
+            lblDogru.AutoSize = true;
+            lblDogru.Location = new Point(86, 26);
+            lblDogru.Name = "lblDogru";
+            lblDogru.Size = new Size(26, 31);
+            lblDogru.TabIndex = 1;
+            lblDogru.Text = "0";
             // 
             // label1
             // 
@@ -402,7 +401,7 @@
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(button24);
+            Controls.Add(btnToplam);
             Controls.Add(btnP);
             Controls.Add(btnI);
             Controls.Add(btnR);
@@ -463,16 +462,16 @@
         private Button btnR;
         private Button btnI;
         private Button btnP;
-        private Button button24;
+        private Button btnToplam;
         private RichTextBox richTextBox1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private TextBox textBox1;
         private GroupBox groupBox3;
         private LinkLabel linkLabel1;
-        private Label label4;
+        private Label lblYanlis;
         private Label label3;
-        private Label label2;
+        private Label lblDogru;
         private Label label1;
     }
 }

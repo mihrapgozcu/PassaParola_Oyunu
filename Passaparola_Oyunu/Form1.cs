@@ -2,30 +2,30 @@ namespace PassaParola_Oyunu
 {
     public partial class Form1 : Form
     {
+        // Form üzerinde kullanýlacak deðiþkenlerin tanýmlanmasý
+        int soruNo = 0;     // Soru numarasý
+        int dogruCevaplar = 0;  // Doðru cevap sayýsý
+        int yanlisCevaplar = 0; // Yanlýþ cevap sayýsý
+        int toplamPuan = 0; // Toplam puan
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        int soruno = 0, dogru = 0, yanlis = 0;
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        // Sonraki soruya geçmek için linkLabel1_LinkClicked olayý
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            linkLabel1.Text = "Sonraki";
-            soruno++;
-            this.Text = soruno.ToString();
+            linkLabel1.Text = "Sonraki";   // LinkLabel metnini "Sonraki" olarak deðiþtirir
+            soruNo++;   // Soru numarasýný bir artýrýr
+            this.Text = soruNo.ToString();  // Form baþlýðýna güncel soru numarasýný yazar
 
-            // Sorular ve buton renklerini ayarlama
-            switch (soruno)
+            // Sorularýn ve buton renklerinin ayarlanmasý
+            switch (soruNo)
             {
                 case 1:
-                    richTextBox1.Text = "Ülkemizin güney kýsmýndaki kýyý bölgesi?";
-                    btnA.BackColor = Color.Yellow;
+                    richTextBox1.Text = "Ülkemizin güney kýsmýndaki kýyý bölgesi?";   // RichTextBox içine soruyu yazar
+                    btnA.BackColor = Color.Yellow;  // btnA butonunun arka plan rengini sarý yapar
                     break;
                 case 2:
                     richTextBox1.Text = "Yeþilliði ile ünlü Marmara ilimiz?";
@@ -120,23 +120,24 @@ namespace PassaParola_Oyunu
                     btnZ.BackColor = Color.Yellow;
                     break;
                 default:
-                    MessageBox.Show("Tüm sorular bitti!");
+                    MessageBox.Show("Tüm sorular bitti!");   // Tüm sorular bitince bir iletiþim kutusu gösterir
                     break;
             }
         }
 
+        // Cevaplarýn kontrol edilmesi için textBox1_KeyDown olayý
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)   // Enter tuþuna basýldýðýnda iþlemleri yapar
             {
-                string cevap = textBox1.Text.ToLower();
-                bool dogruMu = false;
+                string cevap = textBox1.Text.ToLower();   // TextBox içeriðini küçük harfe çevirir
+                bool dogruMu = false;   // Cevabýn doðru olup olmadýðýný kontrol eder
 
-                switch (soruno)
+                switch (soruNo)
                 {
                     case 1:
                         dogruMu = cevap == "akdeniz";
-                        btnA.BackColor = dogruMu ? Color.Green : Color.Red;
+                        btnA.BackColor = dogruMu ? Color.Green : Color.Red;  // Doðru ise buton rengini yeþil yapar, deðilse kýrmýzý yapar
                         break;
                     case 2:
                         dogruMu = cevap == "bursa";
@@ -232,19 +233,24 @@ namespace PassaParola_Oyunu
                         break;
                 }
 
+                // Doðru veya yanlýþ cevaplarýn sayýsýný güncelle
                 if (dogruMu)
                 {
-                    dogru++;
-                    label2.Text = dogru.ToString();
+                    dogruCevaplar++;    // Doðru cevap sayýsýný bir artýrýr
+                    toplamPuan += 3;    // Doðru cevap için 3 puan ekler
                 }
                 else
                 {
-                    yanlis++;
-                    label4.Text = yanlis.ToString();
+                    yanlisCevaplar++;   // Yanlýþ cevap sayýsýný bir artýrýr
+                    toplamPuan -= 1;    // Yanlýþ cevap için 1 puan çýkarýr
                 }
 
-                // TextBox içeriðini temizle
-                textBox1.Clear();
+                // Güncel doðru ve yanlýþ cevap sayýlarýný ve toplam puaný göster
+                lblDogru.Text = $"{dogruCevaplar}";   // Label içine doðru cevap sayýsýný yazar
+                lblYanlis.Text = $"{yanlisCevaplar}";   // Label içine yanlýþ cevap sayýsýný yazar
+                btnToplam.Text = $"Puan: {toplamPuan}";  // btnToplamda butonunun metnini toplam puan olarak günceller
+
+                textBox1.Clear();   // TextBox içeriðini temizler
             }
         }
     }
